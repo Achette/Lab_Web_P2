@@ -8,7 +8,12 @@ const list = async (query) => {
   return repository.findAll(query);
 };
 
+const findById = async (id) => {
+  return repository.findById(id);
+};
+
 module.exports = {
   create,
   list,
+  findById,
 };

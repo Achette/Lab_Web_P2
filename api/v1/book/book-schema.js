@@ -17,6 +17,12 @@ const getAll = {
   }),
 };
 
+const getById = {
+  params: Joi.object({
+    id: Joi.string().required(),
+  }),
+};
+
 module.exports = {
   createSchema,
   getAll,

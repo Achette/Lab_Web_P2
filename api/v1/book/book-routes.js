@@ -25,6 +25,16 @@ const plugin = {
           validate: schema.createSchema,
         },
       },
+      {
+        method: "GET",
+        path: "/v1/books/{id}",
+        options: {
+          tags: ["api"],
+          description: "Create a books",
+          handler: findById,
+          validate: schema.getById,
+        },
+      },
     ]);
   },
 };

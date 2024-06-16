@@ -26,6 +26,20 @@ const findAll = async (query) => {
   }
 };
 
+const findById = async (id) => {
+  return bookModel.findOne({
+    include: [
+      {
+        model: Author,
+        required: false,
+      },
+    ],
+    where: {
+      ...(id ? { id } : {}),
+    },
+  });
+};
+
 module.exports = {
   save,
   findAll,
