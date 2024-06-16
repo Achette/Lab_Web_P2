@@ -10,7 +10,7 @@ const findAll = async (query) => {
 
   try {
     const res = await bookModel.findAll({
-      include: Author,
+      include: author,
       where: {
         ...(authorId ? { authorId } : {}),
         ...(title ? { title: { [Op.iLike]: `${title}%` } } : {}),
@@ -30,7 +30,7 @@ const findById = async (id) => {
   return bookModel.findOne({
     include: [
       {
-        model: Author,
+        model: author,
         required: false,
       },
     ],
@@ -43,4 +43,5 @@ const findById = async (id) => {
 module.exports = {
   save,
   findAll,
+  findById
 };

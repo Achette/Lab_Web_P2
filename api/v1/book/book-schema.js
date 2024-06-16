@@ -17,7 +17,7 @@ const getAll = {
   }),
 };
 
-const getById = {
+const findById = {
   params: Joi.object({
     id: Joi.string().required(),
   }),
@@ -26,4 +26,5 @@ const getById = {
 module.exports = {
   createSchema,
   getAll,
+  findById
 };

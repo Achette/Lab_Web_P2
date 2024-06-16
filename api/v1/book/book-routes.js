@@ -32,7 +32,7 @@ const plugin = {
           tags: ["api"],
           description: "Create a books",
           handler: findById,
-          validate: schema.getById,
+          validate: schema.findById,
         },
       },
     ]);
