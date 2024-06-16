@@ -1,5 +1,6 @@
 const Sequelize = require("sequelize");
 const database = require("../../../config/db");
+const author = require("../author/author-model");
 
 const Book = database.sequelize.define(
   "Book",
@@ -43,5 +44,12 @@ const Book = database.sequelize.define(
   }
 );
 
+author.hasMany(Book, {
+  foreignKey: "authorId",
+});
 
-module.exports = Book
+Book.belongsTo(author, {
+  foreignKey: "id",
+});
+
+module.exports = Book;
